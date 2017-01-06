@@ -1,0 +1,11 @@
+= Spring Rest Docs Example
+
+Showcase testing api with different versions.
+
+Output every api version snippets to different folder and use them
+in the asciidoctor file.
+
+use
+
+gradlew build asciidoctor
+
