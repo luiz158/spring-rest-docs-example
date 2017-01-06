@@ -1,0 +1,41 @@
+= Spring REST Docs REST Assured Sample
+Author Name;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+= V1 API
+
+Create User
+
+include::{snippets}/v1/create-user/curl-request.adoc[]
+
+include::{snippets}/v1/create-user/httpie-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v1/create-user/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v1/create-user/http-response.adoc[]
+
+= V2 API
+
+
+Update User
+
+include::{snippets}/v2/update-user/curl-request.adoc[]
+
+include::{snippets}/v2/update-user/httpie-request.adoc[]
+
+One showing the HTTP request:
+
+include::{snippets}/v2/update-user/http-request.adoc[]
+
+And one showing the HTTP response:
+
+include::{snippets}/v2/update-user/http-response.adoc[]
