@@ -1,7 +1,5 @@
 package com.springrestdocs;
 
-import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
-import static com.sun.scenario.Settings.get;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
@@ -14,8 +12,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.JUnitRestDocumentation;
@@ -55,7 +51,7 @@ public class V1ApplicationTests {
 	public void createUser() throws Exception {
 
 		User user = new User();
-		user.setFullnamne("Test UsernameV1");
+		user.setFullname("Test UsernameV1");
 		user.setUsername("usernameTestV1");
 
 		this.mockMvc.perform(post("/api/v1/users")

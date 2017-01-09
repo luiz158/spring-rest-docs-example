@@ -1,6 +1,7 @@
 package com.springrestdocs;
 
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class V2Controller extends V1Controller {
 
     @PutMapping
-    public String updateUser(User user) {
-        return "OK";
+    public User updateUser(@RequestBody User user) {
+        return user;
     }
 
 }

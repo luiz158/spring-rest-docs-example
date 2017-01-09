@@ -15,4 +15,6 @@ Asciidoctor can be quite flexible in terms of styling etc. you can also use cust
 
 Gradle also support incremental recompilation using
 
-`gradlew asciidoctor -t`
+`gradlew asciidoctor -t` (Continuous build is an incubating feature)
+
+

@@ -3,7 +3,7 @@ package com.springrestdocs;
 public class User {
 
     private String username;
-    private String fullnamne;
+    private String fullname;
 
     public String getUsername() {
         return username;
@@ -13,12 +13,12 @@ public class User {
         this.username = username;
     }
 
-    public String getFullnamne() {
-        return fullnamne;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFullnamne(String fullnamne) {
-        this.fullnamne = fullnamne;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
 }
