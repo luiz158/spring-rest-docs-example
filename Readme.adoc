@@ -2,22 +2,17 @@
 
 Showcase testing api with different versions.
 
-The aproach followed here:
+Aproach:
 
 Output every API version snippets to different folder and use them
 in the asciidoctor file compilation.
+Use command to build code, test and generate documentation
 
-use command to build code, test and generate documentation
+`gradlew asciidoctor`
 
-gradlew build asciidoctor
-
-Spring Rest Docs supports RestAssured as an alternative to MockMVC and it can be configured as a totally different project
-for example one could setup spring boot with Spring Rest Docs to test the apis and have no dependency on current codebase.
-In the case of MockMVC that would not work as MockMVC needs the container that the application is running.
-
-
-Asciidoctor can be quite flexible in terms of styling etc. you can also use custom directives and inject javascript code.
+Spring Rest Docs supports `RestAssured` as an alternative to `MockMVC`.
+Asciidoctor can be quite flexible in terms of styling etc. you can also use custom directives and inject javascript code to create a slick ui.
 
 Gradle also support incremental recompilation using
 
-gradlew asciidoctor -t
+`gradlew asciidoctor -t`
