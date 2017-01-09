@@ -22,59 +22,57 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
-//@AutoConfigureRestDocs("/v2")
 public class V2ApplicationTests {
 
-	@Rule
-	public final JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("build/generated-snippets/v2");
+    @Rule
+    public final JUnitRestDocumentation restDocumentation =
+            new JUnitRestDocumentation("build/generated-snippets/v2");
 
-	@Autowired
-	private ObjectMapper objectMapper;
+    @Autowired
+    private ObjectMapper objectMapper;
 
-	@Autowired
-	private WebApplicationContext context;
+    @Autowired
+    private WebApplicationContext context;
 
-	private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-	@Before
-	public void setUp() {
-		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
-									  .apply(documentationConfiguration(this.restDocumentation))
-									  .alwaysDo(document("{method-name}/"))
-									  .build();
-	}
+    @Before
+    public void setUp() {
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
+                                      .apply(documentationConfiguration(this.restDocumentation))
+                                      .alwaysDo(document("{method-name}/"))
+                                      .build();
+    }
 
-	@Test
-	public void createUser() throws Exception {
+    @Test
+    public void createUser() throws Exception {
 
-		User user = new User();
-		user.setFullname("Test UsernameV2");
-		user.setUsername("usernameTestV2");
+        User user = new User();
+        user.setFullname("Test UsernameV2");
+        user.setUsername("usernameTestV2");
 
-		this.mockMvc.perform(post("/api/v2/users")
-									 .accept(MediaType.APPLICATION_JSON)
-									 .content(objectMapper.writeValueAsString(user))
-									 .contentType(MediaType.APPLICATION_JSON))
-					.andExpect(status().isOk());
-	}
+        this.mockMvc.perform(post("/api/v2/users")
+                                     .accept(MediaType.APPLICATION_JSON)
+                                     .content(objectMapper.writeValueAsString(user))
+                                     .contentType(MediaType.APPLICATION_JSON))
+                    .andExpect(status().isOk());
+    }
 
-	@Test
-	public void updateUser() throws Exception {
-		User user = new User();
-		user.setFullname("Test UsernameV2");
-		user.setUsername("usernameTestV2");
+    @Test
+    public void updateUser() throws Exception {
+        User user = new User();
+        user.setFullname("Test UsernameV2");
+        user.setUsername("usernameTestV2");
 
-		this.mockMvc.perform(put("/api/v2/users")
-									 .accept(MediaType.APPLICATION_JSON)
-									 .content(objectMapper.writeValueAsString(user))
-									 .contentType(MediaType.APPLICATION_JSON))
-					.andExpect(status().isOk())
-					.andExpect(jsonPath("username", is( user.getUsername())))
-					.andExpect(jsonPath("fullname", is( user.getFullname())));
-	}
+        this.mockMvc.perform(put("/api/v2/users")
+                                     .accept(MediaType.APPLICATION_JSON)
+                                     .content(objectMapper.writeValueAsString(user))
+                                     .contentType(MediaType.APPLICATION_JSON))
+                    .andExpect(status().isOk())
+                    .andExpect(jsonPath("username", is(user.getUsername())))
+                    .andExpect(jsonPath("fullname", is(user.getFullname())));
+    }
 
 }
