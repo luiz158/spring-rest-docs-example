@@ -55,8 +55,8 @@ public class V1ApplicationTests {
 	public void createUser() throws Exception {
 
 		User user = new User();
-		user.setFullnamne("Test Username");
-		user.setUsername("usernameTest");
+		user.setFullnamne("Test UsernameV1");
+		user.setUsername("usernameTestV1");
 
 		this.mockMvc.perform(post("/api/v1/users")
 									 .accept(MediaType.APPLICATION_JSON)

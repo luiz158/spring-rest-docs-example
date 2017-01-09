@@ -17,7 +17,3 @@ In the case of MockMVC that would not work as MockMVC needs the container that t
 
 
 Asciidoctor can be quite flexible in terms of styling etc. you can also use custom directives and inject javascript code.
-
-Gradle also support incremental recompilation using
-
-gradlew asciidoctor -t

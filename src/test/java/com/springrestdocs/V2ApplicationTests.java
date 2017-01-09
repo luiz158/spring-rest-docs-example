@@ -51,8 +51,8 @@ public class V2ApplicationTests {
 	public void createUser() throws Exception {
 
 		User user = new User();
-		user.setFullnamne("Test Username");
-		user.setUsername("usernameTest");
+		user.setFullnamne("Test UsernameV2");
+		user.setUsername("usernameTestV2");
 
 		this.mockMvc.perform(post("/api/v2/users")
 									 .accept(MediaType.APPLICATION_JSON)
@@ -64,8 +64,8 @@ public class V2ApplicationTests {
 	@Test
 	public void updateUser() throws Exception {
 		User user = new User();
-		user.setFullnamne("Test Username");
-		user.setUsername("usernameTest");
+		user.setFullnamne("Test UsernameV2");
+		user.setUsername("usernameTestV2");
 
 		this.mockMvc.perform(put("/api/v2/users")
 									 .accept(MediaType.APPLICATION_JSON)
